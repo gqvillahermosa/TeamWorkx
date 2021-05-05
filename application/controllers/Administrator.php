@@ -1,0 +1,107 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Administrator extends CI_Controller {
+ public function __construct()
+        {
+                parent::__construct();
+                //load database models
+                //$this->load->model('members');
+                $this->load->model('admin');
+                $this->load->helper('html');
+                //load libary
+                //$this->load->library('session');
+               // $this->load->library('table');
+               // $this->load->library('form_validation');
+               // $this->load->helper('form');
+                
+        }//construct
+
+
+        public function index(){ // login page
+            if($this->session->userdata('admin')== FALSE){
+                redirect(base_url('/administrator/login'));
+            }
+        	// $this->session->set_flashdata('chapter', ' ');//set chapter flashdata to ready
+           // echo "inside administrator index";
+            $this->load->view('template/header');
+            $this->load->view('admin/dashboard');
+        }//index
+
+        public function login(){
+        if($this->session->userdata('admin')){
+            //echo "you are already login";
+            $this->showDashboard();
+        }else{
+            $this->load->view("template/header");
+            $this->load->view("admin/login");
+            echo "</body></html>";
+            //$this->load->view("template/footer");
+        }
+    }//login
+
+    function verify(){
+        $check = $this->admin->validateUser();
+        if ($check) {
+            //echo "user verified";
+            $this->session->set_userdata('admin', '1');
+            redirect(base_url('administrator'));
+        }else{
+            //echo "user not verified";
+            redirect(base_url('administrator/login'));
+        }
+        
+    }// verify
+
+        public function showDashboard(){
+       
+           if($this->session->userdata('admin') == FALSE){
+           redirect(base_url('administrator/login'));
+            //add code to redirect to login/index
+        }
+        else{
+            $this->session->set_flashdata('chapter', 'Ready');
+            $this->load->view("template/header");
+            $this->load->view("template/menu");
+            $this->load->view("home/dashboard");
+            $this->load->view("template/footer");
+        //echo "inside dashboard";
+        }
+        
+    }
+
+    function logout(){
+        //echo "logout";
+        $this->session->sess_destroy();
+        $this->load->view("template/header");
+        echo "<div class='container'><div class='alert alert-success' role='alert'>Logout Successful!</div></div>";
+        $this->load->view("admin/login");
+        $this->load->view("template/footer");
+    }//logout
+
+    public function insights(){
+        $this->load->view('admin/insights');
+    }//insights
+
+    public function members(){
+        //echo "insde admin members";
+        $this->load->view('template/header');
+        $this->load->view('admin/members');
+    }//members
+
+    public function showApplicants(){
+       // echo "inside showApplicants";
+       $query = $this->admin->showApplicants();
+       foreach ($query->result() as $row)
+    {
+        echo $row->SeqNo;
+        echo $row->Firstname;
+        echo $row->Surname;
+    }
+          
+
+    }//showApplicants
+       
+}//Admin
+
+?>
