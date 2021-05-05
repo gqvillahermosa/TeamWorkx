@@ -92,7 +92,7 @@ class Administrator extends CI_Controller {
     public function showApplicants(){
        // echo "inside showApplicants";
        $query = $this->admin->showApplicants();
-       foreach ($query->result() as $row)
+       foreach ($query->result() as $row) // move to this applicant model
     {
         echo $row->SeqNo;
         echo $row->Firstname;

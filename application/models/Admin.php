@@ -56,13 +56,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 		
 	}	//validateChapterOfficer
+	//moved showApplicant to  Applicant Model
 
-	public function showApplicants(){
-
-		//echo "inside admin db";
-
-		return $this->db->query('CALL getApplicants("v")');
-		
-	}
+	
 }
 ?>
