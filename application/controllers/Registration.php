@@ -181,6 +181,33 @@ public function check(){ // check if the applicants's id is not yet registered
 		redirect(base_url('chapter_officer/member'));
 	}
 
+    public function showVerifiedApplicants(){
+       // echo "inside showApplicants";
 
-}//Registration
+      $data['verifiedApplicants']= array();
+
+       $query = $this->applicants->showApplicants();
+      
+      foreach ($query->result() as $row)
+		{
+			
+        array_push( $data['verifiedApplicants'], $row);
+		}
+
+
+
+		//print_r($data);
+      // $data['verifiedApplicants'] = $row;
+
+     $this->load->view('registration/showVerifiedApplicants', $data);
+
+
+     
+    
+          
+
+    }//showApplicants
+
+
+	}//Registration
 ?>

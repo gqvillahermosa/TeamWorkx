@@ -127,6 +127,8 @@ class Chapter_officer extends CI_Controller
 
 	}//showApplicants
 
+	
+
 	public function showTabs(){
 		$query = $this->db->query("CALL  showTables('dojosys') ");
 		

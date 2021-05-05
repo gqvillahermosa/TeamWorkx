@@ -85,6 +85,14 @@ class Applicants extends CI_Model{
             //echo "inside applicant model";
             $this->db->query("CALL rejectApplicant($id)");
        }
+
+       public function showApplicants(){
+
+        //echo "inside admin db";
+
+        return $this->db->query('CALL getApplicants("v")'); //call verified applicant
+        
+    }//showApplicant
 }//Applicants
 
 ?>
