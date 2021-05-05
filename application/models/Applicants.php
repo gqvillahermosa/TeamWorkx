@@ -77,8 +77,10 @@ class Applicants extends CI_Model{
           return $this->db->query($sql);
        }
 
-       public function verifyApplicant($id){
-            $this->db->query("CALL verifyApplicant($id)");
+       public function verifyApplicant($Seqid){
+            $validatedBy = $this->session->userdata('user'); 
+            //the one who login is the one who verifly
+            $this->db->query("CALL verifyApplicant($Seqid,  $validatedBy )");
        }
 
         public function rejectApplicant($id){
@@ -93,6 +95,10 @@ class Applicants extends CI_Model{
         return $this->db->query('CALL getApplicants("v")'); //call verified applicant
         
     }//showApplicant
+
+        public function showSponsor(){
+            $this->db->showSponsor();
+        }
 }//Applicants
 
 ?>

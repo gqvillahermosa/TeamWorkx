@@ -35,6 +35,12 @@ class Member extends CI_Controller {
         public function addMember(){
 
         }//addMember
+
+        public function viewMember($id){
+
+            echo "inside viewMember $id";
+        }
+
 }//Memner
 
 ?>

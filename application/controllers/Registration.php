@@ -163,12 +163,12 @@ public function check(){ // check if the applicants's id is not yet registered
 	 }//viewApplicant
 
 
-	 public function verifyApplicant($id){
+	 public function verifyApplicant($Seqid){
 		/* change the status column from 'n' to 'v' 
 		and redirect back to member dashboard */
 		/*echo $id." is inside verifyApplicant";*/
 
-		$this->applicants->verifyApplicant($id);
+		$this->applicants->verifyApplicant($Seqid);
 		redirect(base_url('chapter_officer/member'));
 
 
