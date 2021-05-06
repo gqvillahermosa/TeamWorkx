@@ -18,7 +18,7 @@
 ?>			
 	     <tr>
 	     	<td><?=anchor(base_url('registration/viewApplicant/'.$row->SeqNo), $row->Firstname.' '.$row->Surname, 'class="btn btn-info"' ) ?>  </td>
-	       <td><?=anchor(base_url('registration/acceptApplicant/'.$row->SeqNo),'Accept', 'class="btn btn-warning" 
+	       <td><?=anchor(base_url('registration/approveApplicant/'.$row->SeqNo),'Aprove', 'class="btn btn-warning" 
 	       		data-target="#rejectApplicant" ') ?></td>
 	      <td><?=anchor(base_url('registration/rejectApplicant/'.$row->SeqNo),'Reject', 'class="btn btn-danger"') ?></td>
 	       </tr>
