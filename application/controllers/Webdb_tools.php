@@ -97,13 +97,13 @@ class Webdb_tools extends CI_Controller
 			$this->load->view('template/header');
 			$this->load->view('webdb_tools/createTable');
 		}
-
-
-		
-
-		
-
 	}//creator
+
+
+	public function makePassword($password){
+		//make hash password from $password, use blowfish
+		echo password_hash($password, PASSWORD_BCRYPT );
+	}
 }
 
 

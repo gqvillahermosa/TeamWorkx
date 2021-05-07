@@ -152,13 +152,15 @@ public function check(){ // check if the applicants's id is not yet registered
 	}//invite
 
 	 public function approveApplicant(){
-	 	/*Done by Admin 
+	 	/*Done by Admin First Transaction
 		1. Update Approved to ID of approver, Status to 'a'
 		2. Copy Applicant to Member table
 		3. Update to tempory password
 		4. Update member.change_password to TRUE.
 	 	*/
 
+
+		
 	 	echo "inside approveApplicant";
 
 	 }//approve

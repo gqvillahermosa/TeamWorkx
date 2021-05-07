@@ -10,6 +10,15 @@ renders the table with actions view, verified and reject -->
           
 	$query = $this->applicants->getHeaders($chapter, $status);
 	//print_r($query);
+	//print_r($query->result());
+
+/*	foreach ($query->result() as $row)
+{
+        echo $row->title;
+        echo $row->name;
+        echo $row->body;
+}*/
+
 ?>
 		<table class="table table-striped table-hover mt-5">
 		<thead><tr><th>Name</th><th>Action</th><th> </th></tr></thead>
