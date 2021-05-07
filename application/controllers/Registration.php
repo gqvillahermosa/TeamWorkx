@@ -14,7 +14,7 @@ class Registration extends CI_Controller{
                $this->load->library('form_validation');
                $this->load->helper('form');
                
-        }
+        }//
 
  public function index(){
  		$this->session->sess_destroy();//clear all session if interrupted
@@ -108,34 +108,7 @@ public function check(){ // check if the applicants's id is not yet registered
  	}
 
  	public function addApplicant(){
- 		//$applicant = array('' => '' );
- 		/*$data = array(
-         'ID' => $this->input->post('pic_id'),
-         'Sponsor_id' => $this->input->post('sponsor_id'),
-         //'Sponsor_name' => $this->input->post('sponsor_name'),
-         'Firstname' => $this->input->post('firstname'),
-         'Middlename' => $this->input->post('middlename'),
-         'Surname' => $this->input->post('surname'),
-         'Salutation' => $this->input->post('salutation'),
-         'Birthdate' => $this->input->post('birthdate'),
-         'Gender' => $this->input->post('gender'),
-         'Civil_Status' => $this->input->post('civil_status'),
-         'Office_landline' => $this->input->post('office_landline'),
-         'Home_landline' => $this->input->post('home_landline'),
-         'Mobile' => $this->input->post('mobile'),
-         'Email' => $this->input->post('email'),
-         'Website' => $this->input->post('website'),
-         'Socialmedia1' => $this->input->post('socialmedia1'),
-         'Socialmedia2' => $this->input->post('socialmedia2'),
-         'Registration_no' => $this->input->post('registration_no'),
-         'Registration_date' => $this->input->post('registration_date'),
-         'Valid_until' => $this->input->post('valid_until'),
-         //'Photo' => $this->input->post('photo'),
-         'Remarks' => $this->input->post('remarks')
-     );
  		
- 		$this->applicants->add($data);
- 		redirect(base_url('/upload/'));*/
  		
  	}//addApplicant
 
@@ -151,19 +124,42 @@ public function check(){ // check if the applicants's id is not yet registered
 		 */
 	}//invite
 
-	 public function approveApplicant(){
+	 public function approveApplicant($id){
 	 	/*Done by Admin First Transaction
 		1. Update Approved to ID of approver, Status to 'a'
 		2. Copy Applicant to Member table
 		3. Update to tempory password
 		4. Update member.change_password to TRUE.
 	 	*/
+	 	$User = $this->session->userdata("user");
+	 	//$password = '$2y$10$YUleqNvRbKgvw7ho.FGi6uKsHgeC9J/Uh5prYhmF0Ew6Nk0A4jzPi';
+	 	$this->db->trans_start();
+		$this->db->query("	UPDATE applicants 
+							SET Approved = $User, `Approval_Date`= NOW(), `Status`='a'
+							WHERE`SeqNo` = $id;
+						");
+		$this->db->query(
+						"INSERT INTO members (`ID`,`Firstname`,`Middlename`,`Surname`,`Salutation`, `Birthdate`,`Gender`,`Civil_Status`,`Photo`, `Office`,`Home`,`Office_landline`,`Home_landline`,`Mobile`,`Email`, `Website`, `Socialmedia1`, `Socialmedia2`,`Status`,`change_password`)
+						SELECT `ID`,`Firstname`,`Middlename`,`Surname`,`Salutation`, `Birthdate`,`Gender`,`Civil_Status`,`Photo`, `Office`,`Home`,`Office_landline`,`Home_landline`,`Mobile`,`Email`, `Website`, `Socialmedia1`, `Socialmedia2`,'new',TRUE
+						FROM `applicants` 
+						WHERE SeqNo = $id ");
 
+		/*$this->db->query("UPDATE members
+						  SET `password` =  QUOTE('$2y$10$YUleqNvRbKgvw7ho.FGi6uKsHgeC9J/Uh5prYhmF0Ew6Nk0A4jzPi')
+						  WHERE SeqNo = $id;
+						");
+		$this->db->query("UPDATE members
+						  SET `change_password` = TRUE
+						  WHERE SeqNo = $id;
+						");*/
+		$this->db->trans_complete();
+		redirect(base_url('administrator/members'));
+		//echo "Transaction completed";
 
-		
-	 	echo "inside approveApplicant";
+	 }
+	 	
 
-	 }//approve
+	//approve  }
 
 	 public function viewApplicant($id){
 
@@ -182,14 +178,14 @@ public function check(){ // check if the applicants's id is not yet registered
 		redirect(base_url('chapter_officer/member'));
 
 
-	}
+	} //verifyApplicant
 
 	public function rejectApplicant($id){
 		/*Delete form applicant table */
 		//echo $id." is inside rejectApplicant";
 		$this->applicants->rejectApplicant($id);
 		redirect(base_url('chapter_officer/member'));
-	}
+	}//rejectApplicant
 
     public function showVerifiedApplicants(){
        // echo "inside showApplicants";
@@ -209,12 +205,7 @@ public function check(){ // check if the applicants's id is not yet registered
 		//print_r($data);
       // $data['verifiedApplicants'] = $row;
 
-     $this->load->view('registration/showVerifiedApplicants', $data);
-
-
-     
-    
-          
+     $this->load->view('registration/showVerifiedApplicants', $data);       
 
     }//showApplicants
 

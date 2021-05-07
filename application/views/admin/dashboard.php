@@ -56,7 +56,7 @@
       $link = base_url('settings');
       echo anchor($link,$icon);
   ?> -->
-       <div class="text-white"><?php echo 'Login as '.($this->session->userdata('fullname')).'&nbsp'; ?></div> 
+       <div class="text-white"><?php echo 'Login as '.($this->session->userdata('user')).'&nbsp'; ?></div> 
        <?=anchor(base_url('administrator/logout'), 'Logout', 'class="btn btn-outline-warning my-2 my-sm-0 ml-1"') ?>
       <!-- <button class="btn btn-outline-warning my-2 my-sm-0 ml-1" >Logout</button> -->
     

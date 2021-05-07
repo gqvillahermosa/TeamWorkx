@@ -7,21 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $this->load->database();
         }
 		
-	public function validateUser()
+	public function validateUser( $id)
 	{
-
-		//echo "inside validateUser";
-		$id = $this->input->post("username"); 
-
-
-		/*return the hash password of user of ID 
-		Input ID, return hash password */
-/*
-		$this->db->select('password');
-		$this->db->where('email',$email);
-		$query = $this->db->get('admins');
-		$row = $query->row();
-		$hash = $row->password;*/
 
 		$query = $this->db->query("CALL getHashPassword($id)");
 		$hash = $query->row()->password;//get hash password

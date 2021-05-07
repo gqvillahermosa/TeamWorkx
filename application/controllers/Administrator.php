@@ -41,10 +41,12 @@ class Administrator extends CI_Controller {
     }//login
 
     function verify(){
-        $check = $this->admin->validateUser();
+        $id = $this->input->post("username");
+        $check = $this->admin->validateUser( $id);
         if ($check) {
             //echo "user verified";
             $this->session->set_userdata('admin', '1');
+            $this->session->set_userdata('user', $id);
             redirect(base_url('administrator'));
         }else{
             //echo "user not verified";
