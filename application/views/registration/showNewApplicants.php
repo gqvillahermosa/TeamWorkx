@@ -24,6 +24,7 @@ renders the table with actions view, verified and reject -->
 		<thead><tr><th>Name</th><th>Action</th><th> </th></tr></thead>
 		<tbody>
 <?php
+		
 		foreach ($query->result() as $row)
 		{
 ?>			
@@ -35,4 +36,5 @@ renders the table with actions view, verified and reject -->
 	       </tr>
 <?php		}
 		echo '</tbody></table>';
+		print_r('Applicants found: '.count($query->result()));
 ?>

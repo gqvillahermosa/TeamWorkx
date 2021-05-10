@@ -45,6 +45,9 @@
 			<option <?php echo  set_select('salutation', 'Dr.'); ?>>Dr.</option>
 		</select>
 
+<div class="row">
+<div class="col-sm">
+
 		<div class="form-group mt-3">
 			<?php echo form_error('firstname'); ?>
 		<label>Firstname*</label>
@@ -52,16 +55,17 @@
 		<input type="text" name="firstname" class="form-control" placeholder="e.g Juan, Mary" value="<?php echo set_value('firstname'); ?>">
 		<small class="form-text text-muted">Please enter  First or Given Name</small>
 		</div>
+</div>	
 
-
+<div class="col-sm">
 		<div class="form-group mt-3">
 		<label>Middlename</label>
 		<?php echo form_error('middlename'); ?>
 		<input type="text" name="middlename" class="form-control" value="<?php echo set_value('middlename'); ?>">
 		<small class="form-text text-muted">Please enter  Middle Name</small>
 		</div>
-
-
+</div>
+<div class="col-sm">
 	
 		<div class="form-group mt-3">
 		<label>Surname*</label>
@@ -69,14 +73,16 @@
 		<input type="text" name="surname" class="form-control" placeholder="del Cruz, Poppins" value="<?php echo set_value('surname'); ?>">
 		<small class="form-text text-muted">Please enter  Surname</small>
 		</div>
-
+</div>		
+</div>
 
 
 
 		<h5><img src=<?=base_url("icons/person-check.svg"); ?>> Demographics</h5>
 		<hr>
 
-
+<div class="row">
+<div class="col-sm">
 		<div class="form-group">
 		<label>Gender*</label>
 			<div class="custom-control custom-radio">
@@ -89,9 +95,9 @@
 			</div>
 			<small class="form-text text-muted">Choose gender</small>
 		</div>
+</div>
 
-
-
+<div class="col-sm">
 		<div class="form-group">
 			<label>Civil Status*</label>
 			<div class="custom-control custom-radio">
@@ -112,8 +118,9 @@
 			</div>
 			<small class="form-text text-muted">Choose civil status</small>
 		</div>
-		
-	
+</div>		
+
+<div class="col-sm">	
 
 		<div class="form-group">
 			<label>Birthdate*</label>
@@ -122,15 +129,45 @@
 			<small class="form-text text-muted">Please enter the date of birth</small>
 		</div>
 
+
+</div>		
+</div>
+<hr>	
 			<div class="form-group">	
 				<label>Chapter</label><p>	
 				<input list="chaps" name="chapter" value="<?php echo set_value('chapter'); ?>">
 				<datalist id="chaps"></datalist>
 				<small class="form-text text-muted">Please enter the chapter you would join</small>
 			</div>	
+		
+	
+<h5>Work / Contact Information</h5>
+<hr>	
 
-<h5>Contact Information</h5>
-<hr>
+<div class="row">
+<div class="col-sm">
+
+		<div class="form-group">
+					<p>
+					<label for="Organization"> Organization </label>
+					<input type="text" name="Organization" id="Organization" class="form-control" placeholder="abcde">
+					<small class="form-text text-muted">Please enter the name of your organizaton</small>
+					</p>
+		</div>
+</div>
+<div class="col-sm">
+		<div class="form-group">
+					<p>
+					<label for="Position"> Position </label>
+					<input type="text" name="Position" id="Position" class="form-control" placeholder="abcde">
+					<small class="form-text text-muted">Please enter the your positon in your organization</small>
+					</p>
+		</div>
+</div>		
+</div>		
+
+<div class="row">
+<div class="col-sm">
 
 		<div class="form-group">
 			<label><img src=<?=base_url("icons/envelope-open.svg"); ?>> Office Address*</label>			
@@ -138,19 +175,39 @@
 			<textarea name="office" class="form-control"><?=set_value("office"); ?></textarea>
 			<small class="form-text text-muted">Please enter Office Address. Only letters, numbers and spaces allowed</small>
 		</div>
-		<div class="form-group">
-			<label><img src=<?=base_url("icons/house-fill.svg"); ?>> Home Address*</label>
-			<?php echo form_error('home'); ?>
-			<textarea name="home" class="form-control"><?=set_value("home"); ?></textarea>
-			<small class="form-text text-muted">Please enter Home Address</small>
-		</div>
-
+</div>
+<div class="col-sm">
 		<div class="form-group">
 			<label><img src=<?=base_url("icons/telephone-fill.svg"); ?>> Office Landline</label>
 			<?php echo form_error('office_landline'); ?>
 			<input type="text" name="office_landline" class="form-control" placeholder="e.g 63022982794" value="<?php echo set_value('office_landline'); ?>">
 			<small class="form-text text-muted">Please enter Office Landline Phone Number</small>
 		</div>
+</div>
+
+<div class="col-sm">		
+
+		<div class="form-group">
+					<p>
+					<label for="Office_fax"> Office_fax </label>
+					<input type="text" name="Office_fax" id="Office_fax" class="form-control" placeholder="abcde">
+					<small class="form-text text-muted">Enter instructions here</small>
+					</p>
+		</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm">
+
+		<div class="form-group">
+			<label><img src=<?=base_url("icons/house-fill.svg"); ?>> Home Address*</label>
+			<?php echo form_error('home'); ?>
+			<textarea name="home" class="form-control"><?=set_value("home"); ?></textarea>
+			<small class="form-text text-muted">Please enter Home Address</small>
+		</div>
+</div>
+<div class="col-sm">		
 
 		<div class="form-group">
 			<label><img src=<?=base_url("icons/telephone.svg"); ?>> Home Landline</label>
@@ -158,29 +215,44 @@
 			<input type="text" name="home_landline" class="form-control" placeholder="e.g 63022982794" value="<?php echo set_value('home_landline'); ?>" >
 			<small class="form-text text-muted">Please enter Home Landline Phone Number</small>
 		</div>
+</div>
+<div class="col-sm">		
 
+<div class="form-group">
+					<p>
+					<label for="Home_fax"> Home_fax </label>
+					<input type="text" name="Home_fax" id="Home_fax" class="form-control" placeholder="abcde">
+					<small class="form-text text-muted">Please enter the your Home fax</small>
+					</p>
+				</div>
+</div>
+</div>				
 
+<div class="row">
+<div class="col-sm">
 		<div class="form-group">
 			<label><img src=<?=base_url("icons/phone-fill.svg"); ?>> Cellphone/Mobile*</label>
 			<?php echo form_error('mobile'); ?>
 			<input type="text" name="mobile" class="form-control" placeholder="e.g 639282982794" value="<?php echo set_value('mobile'); ?>">
 			<small class="form-text text-muted">Please enter Cellphone/Mobile Phone Number</small>
 		</div>
-
-	
+</div>
+<div class="col-sm">	
 		<div class="form-group">
 			<label>@ Email*</label>
 			<?php echo form_error('email'); ?>
 			<input type="email" name="email" class="form-control" placeholder="e.g name@example.com" value="<?php echo set_value('email'); ?>">
-			<small class="form-text text-muted">Please enter valid Email Address</small>
+			<small class="form-text text-muted">Please enter your valid Email Address</small>
 		</div>		
+</div>
+</div>		
 
 
 			<div class="form-group">
 				<label>&nbsp <img src=<?=base_url("icons/mouse2.svg"); ?>>&nbsp Website</label>
 				<?php echo form_error('website'); ?>
 				<input type="url" name="website" class="form-control" placeholder="e.g http://wwww.example.com" value="<?php echo set_value('website'); ?>">
-				<small class="form-text text-muted">Please enter the valid URL of website</small>
+				<small class="form-text text-muted">Please enter the valid URL of your website</small>
 			</div>
 
 
@@ -198,31 +270,82 @@
 				<input type="url" name="socialmedia2"  class="form-control" placeholder="e.g http://wwww.twitter.com" value="<?php echo set_value('socialmedia2'); ?>">
 				<small class="form-text text-muted">Please enter the valid URL of your social media<</small>
 			</div>
-	
+	<h5>Highest Educatonal Attainment</h5>
+
+<div class="row">
+<div class="col-sm">
+
+	<div class="form-group">
+					<p>
+					<label for="Degree"> Degree </label>
+					<input type="text" name="Degree" id="Degree" class="form-control" placeholder="abcde">
+					<small class="form-text text-muted">Please enter your highest degree earned</small>
+					</p>
+				</div>
+	</div>
+	<div class="col-sm">			
+	<div class="form-group">
+					<p>
+					<label for="Specialization:"> Specialization: </label>
+					<input type="text" name="Specialization:" id="Specialization:" class="form-control" placeholder="abcde">
+					<small class="form-text text-muted">Please enter here your specialization</small>
+					</p>
+				</div>
+	</div>
+	</div>	
+
+<div class="row">
+<div class="col-sm">			
+		
+<div class="form-group">
+					<p>
+					<label for="University"> Educational Institution </label>
+					<input type="text" name="University" id="University" class="form-control" placeholder="abcde">
+					<small class="form-text text-muted">Please enter the name of school/college/unversity where your earned your degree</small>
+					</p>
+				</div>
+</div>
+<div class="col-sm">				
+<div class="form-group">
+					<p>
+					<label for="Year_graduated"> Year_graduated </label>
+					<input type="date" name="Year_graduated" id="Year_graduated" class="form-control">
+					<small class="form-text text-muted">Please the graduaton date of your degree</small>
+					</p>
+</div>
+</div>
+</div>
 
 	<h5 class="mt-2">Professional Identity Card Details</h5>
 	<hr>
+<div class="row">
+<div class="col-sm">
+
 	<div class="form-group">
 		<label>Registration Number*</label>
 		<input type="text" name="registration_no" class="form-control" placeholder="1234567" required="true" value="<?php echo set_value('registration_no'); ?>">
 		<small class="form-text text-muted">Please enter  Registration Number of you Professional Idenfication Card</small>
 	</div>
-
+</div>
+<div class="col-sm">
 		
 			<div class="form-group">
 			<label>Registration Date*</label>
 			<input type="date" name="registration_date" class="form-control" value="<?php echo set_value('registration_date'); ?>" required="true">
 			<small class="form-text text-muted">Please enter the date of registration</small>
 		</div>
-
+</div>
+<div class="col-sm">
 
 			<div class="form-group">
 			<label>Valid until*</label>
 			<input type="date" name="valid_until" class="form-control"value="<?php echo set_value('valid_until'); ?>" required="true">
 			<small class="form-text text-muted">Please enter the date of expiration</small>
 		</div>
+</div>		
 
 
+<hr>
 
 <button type="submit" class="btn btn-primary btn-block mt-2 mb-3">Next -> </button>
 

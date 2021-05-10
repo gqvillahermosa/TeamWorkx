@@ -46,5 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	//moved showApplicant to  Applicant Model
 
 	
+
+	
 }
 ?>

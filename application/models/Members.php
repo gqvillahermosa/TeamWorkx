@@ -40,10 +40,13 @@ class Members extends CI_Model{
         }//delete
 
         public function getFullname($id){
-                $this->db->select('firstname, surname');
+
+               /* $this->db->select('firstname, surname');
                 $this->db->from('members');
                 $this->db->where('ID', $id);
-                $query = $this->db->get();#
+                $query = $this->db->get();#*/
+
+                $query = $this->db->query('CALL getMemberName($id)');
                 $name = $query->row();
 
                 return $name->firstname.' '.$name->surname;

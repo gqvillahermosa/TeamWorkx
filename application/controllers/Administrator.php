@@ -8,6 +8,7 @@ class Administrator extends CI_Controller {
                 //load database models
                 //$this->load->model('members');
                 $this->load->model('admin');
+                 $this->load->model('members');
                 $this->load->helper('html');
                 //load libary
                 //$this->load->library('session');
@@ -45,6 +46,8 @@ class Administrator extends CI_Controller {
         $check = $this->admin->validateUser( $id);
         if ($check) {
             //echo "user verified";
+            //$username = $this->members->getFullname($id);
+            $this->session->set_userdata('fullname', $username);
             $this->session->set_userdata('admin', '1');
             $this->session->set_userdata('user', $id);
             redirect(base_url('administrator'));
