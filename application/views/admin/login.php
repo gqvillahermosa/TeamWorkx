@@ -13,15 +13,58 @@
 		color:white;
 		padding: 5px,10px 
 	}
+
+			.form-signin {
+		  width: 100%;
+		  max-width:500px;
+		  padding: 15px;
+		  margin: auto;
+		}
+		
+		}
+		.form-signin .form-control {
+		  position: relative;
+		  box-sizing: border-box;
+		  height: auto;
+		  padding: 10px;
+		  font-size: 16px;
+		}
 </style>
-<div class="container">
+<div class="container mt-3">
 <!--
 <form action="http://localhost/dj/administrator/verify" method="post">
 -->
-<?=form_open(base_url('administrator/verify')); ?>
+<?=form_open(base_url('administrator/verify'),'class="form-signin"'); ?>
 <fieldset>
-<legend class="mt-5">&nbsp<img src=<?=base_url("icons/login.svg"); ?>>&nbsp Welcome to Dojosys</legend>
-<section class="m-5">
+
+<legend class="mt-5 mb-2">
+
+	&nbsp<img src=<?=base_url("icons/login.svg"); ?>>&nbsp Welcome to PAA System</legend>
+
+<center>
+	<!-- <em class="mb-2">Philippine Association of Agriculturists, Inc.</em> -->
+
+	<?php 
+
+	$image_properties = array(
+        'src'   => base_url('image/5F8B.tmp.jpg'),
+        'alt'   => 'PAA Logo',
+       // 'class' => 'post_images',
+        'width' => '190',
+        'height'=> '152',
+        'border' => '2',
+        'title' => 'PAA Logo'
+       
+);
+
+	echo img($image_properties);
+
+//	echo img(base_url('image/5F8B.tmp.jpg'),'alt="PAA Logo" width="190" height="152" border="2"' )
+
+
+	?>
+</center>
+<section class="m-1">
 <h2 class="text-center"></h2>
 <label>Username</label>
 <input type="text" name="username" class="form-control" placeholder="Enter PIC">

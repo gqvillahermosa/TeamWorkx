@@ -36,6 +36,7 @@ class Administrator extends CI_Controller {
         }else{
             $this->load->view("template/header");
             $this->load->view("admin/login");
+           ///  $this->load->view("login/login");
             echo "</body></html>";
             //$this->load->view("template/footer");
         }
