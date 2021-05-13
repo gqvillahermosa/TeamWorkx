@@ -29,6 +29,11 @@
 		  padding: 10px;
 		  font-size: 16px;
 		}
+
+		.image{
+			border-style: inset;
+			border-width: thin;
+		}
 </style>
 <div class="container mt-3">
 <!--
@@ -37,7 +42,7 @@
 <?=form_open(base_url('administrator/verify'),'class="form-signin"'); ?>
 <fieldset>
 
-<legend class="mt-5 mb-2">
+<legend class="mt-5 mb-3">
 
 	&nbsp<img src=<?=base_url("icons/login.svg"); ?>>&nbsp Welcome to PAA System</legend>
 
@@ -53,7 +58,8 @@
         'width' => '190',
         'height'=> '152',
         'border' => '2',
-        'title' => 'PAA Logo'
+        'title' => 'PAA Logo',
+        'class' => 'image'
        
 );
 

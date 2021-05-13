@@ -13,9 +13,24 @@
 		color:white;
 		padding: 5px,10px 
 	}
+	.form-signin {
+		  width: 100%;
+		  max-width:500px;
+		  padding: 15px;
+		  margin: auto;
+		}
+		
+		}
+		.form-signin .form-control {
+		  position: relative;
+		  box-sizing: border-box;
+		  height: auto;
+		  padding: 10px;
+		  font-size: 16px;
+		}
 </style>	
 <div class="container">
-<?=form_open('registration/check') ?>
+<?=form_open('registration/check', 'class="form-signin"') ?>
 <fieldset>
 	<legend class="mt-5"> &nbsp <img src=<?=base_url("icons/regs.svg"); ?>>&nbsp Registration</legend>
 	<section class="m-5">

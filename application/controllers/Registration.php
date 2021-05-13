@@ -40,11 +40,18 @@ class Registration extends CI_Controller{
  	//print_r($this->session->sponsor_name);
 
  	$this->load->view('template/header');
- 	$this->load->view('registration/checkRegs');
+ 	$this->load->view('registration/terms');
  	echo "</body></html>"; //default footer is annoying 
  	//$this->load->view('template/footer');
 
  	}//invite
+
+ 	public function check_registration(){
+ 		/*form ito check if the PIC have be registred previously */
+ 		$this->load->view('template/header');
+ 	$this->load->view('registration/checkRegs');
+ 	echo "</body></html>"; //default footer is annoying 
+ 	}
 
 public function check(){ // check if the applicants's id is not yet registered
 
