@@ -1,7 +1,7 @@
 <hr>
 <div class="row">
 	<div class="col-lg">
-		<div><?=anchor("http://wwww.groupapp.com", "Powered by GroupApp" ) ?> 
+		<div><?=anchor("http://wwww.bluebetta.com", "Powered by Blue Blue" ) ?> 
 		<sup>&copy</sup></div>
 	</div>
 

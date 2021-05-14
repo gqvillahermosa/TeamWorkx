@@ -23,7 +23,13 @@ $data = array(
          'Registration_date' => $this->input->post('registration_date'),
          'Valid_until' => $this->input->post('valid_until'),
          'Chapter' => $this->input->post('chapter'),
+         'Organization' => $this->input->post('organization'),
+         'Position' => $this->input->post('position'),
+         'Office_fax' => $this->input->post('office_fax'),
+         'Home_fax' => $this->input->post('home_fax'),
+         'Degree' => $this->input->post('degree'),
          'Remarks' => $this->input->post('remarks')
+
 
      );//$data
  		//$applicant = array('' => '' );
