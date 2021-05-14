@@ -1,7 +1,7 @@
 
 <html lang="en">
 <head>
-  <title>Name of Org</title>
+  <title>Phlippines Association of Agriculturaist, Inc.</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href=<?=base_url('css/bootstrap.min.css') ?>>

@@ -72,7 +72,7 @@
 </ol>
 <p style="margin-bottom: 0cm; line-height: 100%"><br/>
 
-	If agreed, please prepare the following
+	If agreed, please prepare the fles for the following for upload
 	<ul>
 		<li>Photo ID</li>
 		<li>Front and back Photo of Professional Identity card (in one photo )</li>
