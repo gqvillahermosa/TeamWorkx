@@ -78,7 +78,12 @@ $profile = $this->applicants->getSingle($id);
 	<center>
 	<div class="col-sm">	
 		<div class=”card”>
-			<img class=”card-img-top” src= <?=base_url('id_photo/'.$profile->Photo) ?> alt=”Card image cap”>
+			<img class=”card-img-top” 
+				src= <?=base_url('id_photo/'.$profile->Photo) ?> 
+				alt=”Card image cap”
+				height="720"
+				width="1080"
+				> <!--Adjust image size -->
 		<div class=”card-body”>ID Photo</div>
 		</div>
 	</div>
@@ -192,6 +197,9 @@ $profile = $this->applicants->getSingle($id);
 		</div>
 		
 	</div>
+
+
+
 <h5>Registration Information</h5>
 <hr>
 	<div class="row mb-3">
@@ -207,7 +215,12 @@ $profile = $this->applicants->getSingle($id);
 	</div>
 	<center>
 	<div class=”card”>
-			<img class=”card-img-top” src= <?=base_url('pic_photo/'.$profile->PIC_photo) ?> alt=”Card image cap”>
+			<img class=”card-img-top” 
+			src= <?=base_url('pic_photo/'.$profile->PIC_photo) ?> 
+			alt=”Card image cap”
+			height="720"
+			width="1080"
+			><!--Adjust image size -->
 		<div class=”card-body”>Professional ID</div>
 		</div>
 	</center>

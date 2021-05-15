@@ -41,12 +41,12 @@ class Members extends CI_Model{
 
         public function getFullname($id){
 
-               /* $this->db->select('firstname, surname');
+                $this->db->select('firstname, surname'); //return to IG method
                 $this->db->from('members');
                 $this->db->where('ID', $id);
-                $query = $this->db->get();#*/
+                $query = $this->db->get();#
 
-                $query = $this->db->query('CALL getMemberName($id)');
+                //$query = $this->db->query("CALL getMemberName($id)"); error out of sync
                 $name = $query->row();
 
                 return $name->firstname.' '.$name->surname;

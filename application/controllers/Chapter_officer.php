@@ -112,20 +112,7 @@ class Chapter_officer extends CI_Controller
 		$this->load->view('chapter_officer/help');
 	}//member
 
-	public function showApplicants($chapter){// show table of new applicants in members mainview
-		//$chapter = 'HQ';
-		
-
-		
-		$data['chapter'] = $chapter; //name of chapter appplicant registered to
-		$data['status'] = "n"; //status of new applcants
-
-		//print_r($data);
-
-
-		$this->load->view('registration/showNewApplicants', $data);
-
-	}//showApplicants
+	
 
 	
 

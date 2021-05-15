@@ -131,6 +131,21 @@ public function check(){ // check if the applicants's id is not yet registered
 		 */
 	}//invite
 
+	public function showApplicants($chapter){// show table of new applicants in members mainview
+		//$chapter = 'HQ';
+		
+
+		
+		$data['chapter'] = $chapter; //name of chapter appplicant registered to
+		$data['status'] = "n"; //status of new applcants
+
+		//print_r($data);
+
+
+		$this->load->view('registration/showNewApplicants', $data);
+
+	}//showApplicants
+
 	 public function approveApplicant($id){
 	 	/*Done by Admin First Transaction
 		1. Update Approved to ID of approver, Status to 'a'

@@ -28,6 +28,10 @@ $data = array(
          'Office_fax' => $this->input->post('office_fax'),
          'Home_fax' => $this->input->post('home_fax'),
          'Degree' => $this->input->post('degree'),
+         'Specialization' => $this->input->post('specialization'),
+         'University' => $this->input->post('university'),
+         'Year_graduated' => $this->input->post('year_graduated'),
+
          'Remarks' => $this->input->post('remarks')
 
 
