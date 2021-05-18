@@ -25,7 +25,7 @@
 
 	<?php echo $error;?>
 
-	<?php echo form_open_multipart(base_url('uploadpic/do_upload/id'),'class="form-signin"');?>
+	<?php echo form_open_multipart(base_url('upload/do_upload/pic'),'class="form-signin"');?>
 	<fieldset>
 
 			<legend>&nbsp <img src=<?=base_url("icons/upload2.svg"); ?>> Upload Professional ID</legend>
