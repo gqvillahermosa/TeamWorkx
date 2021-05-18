@@ -32,6 +32,7 @@ class Registration extends CI_Controller{
  	$data['sponsor_name'] = $this->sponsor($id);
  	$data['path_id_photo'] = './id_photo/';
  	$data['path_pic_photo'] = './pic_photo/';
+ 	$data['path_proof_photo'] = './proofphoto/'; //added for file upload for proof of payment
 
 
  	$this->session->set_userdata($data); //set the sponsor data as session to make it global
