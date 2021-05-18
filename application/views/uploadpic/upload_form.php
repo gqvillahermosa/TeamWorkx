@@ -13,12 +13,19 @@
 		color:white;
 		padding: 5px,10px
 	}
+
+	  .form-signin {
+      width: 100%;
+      max-width:500px;
+      padding: 15px;
+      margin: auto;
+    }
 </style>
 <div class="container mt-5">
 
 	<?php echo $error;?>
 
-	<?php echo form_open_multipart(base_url('uploadpic/do_upload/id'));?>
+	<?php echo form_open_multipart(base_url('uploadpic/do_upload/id'),'class="form-signin"');?>
 	<fieldset>
 
 			<legend>&nbsp <img src=<?=base_url("icons/upload2.svg"); ?>> Upload Professional ID</legend>
