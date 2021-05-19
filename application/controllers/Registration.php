@@ -116,6 +116,12 @@ public function check(){ // check if the applicants's id is not yet registered
  	}
 
  	public function addApplicant(){
+ 		/*remimplement add applicant to form.
+			1. Gather all inputs form form
+			2. Collect all inputs in an array
+			3. Send array to database
+ 		*/
+ 		
  		
  		
  	}//addApplicant

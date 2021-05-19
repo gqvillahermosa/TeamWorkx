@@ -17,7 +17,7 @@
 </style>	<div class="container">
 	<fieldset>
 	<legend class="mt-5">&nbsp<img src=<?=base_url("icons/submit.svg"); ?>><img src=<?=base_url("icons/phone-fill.svg"); ?>> Registration Completed!</legend>
-		<p><strong>Congrats!</strong><br> Your application has been submitted and will be reviewed.</p> {your organization} will contact you shortly for further update.</p><p> For more information <a href="http://wwww.your.org"> click here to visit our web page.</a></p> <p>Thank you and have an nice day! </p>
+		<p><strong>Congrats!</strong><br> Your application has been submitted and will be reviewed.</p> PAA will contact you shortly for further update.</p><p> For more information <a href="http://wwww.your.org"> click here to visit our web page.</a></p> <p>Thank you and have an nice day! </p>
 
 	</fieldset>
 	<?php 
