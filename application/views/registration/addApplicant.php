@@ -1,5 +1,5 @@
 <?php
-$data = array(
+$data = array( //get data from form nput
          'ID' => $this->input->post('pic_id'),
          'Sponsor_id' => $this->input->post('sponsor_id'),
          //'Sponsor_name' => $this->input->post('sponsor_name'),
@@ -38,11 +38,11 @@ $data = array(
      );//$data
  		//$applicant = array('' => '' );
 		foreach ($data as $key => $value) {
- 			$applicant[$key] =   $this->security->xss_clean($value);//
+ 			$applicant[$key] =   $this->security->xss_clean($value);//clean each one
  			//echo  $applicant[$key]."<br";
  			# code...
  		}
 
  		$this->applicants->add($applicant);
- 		redirect(base_url('/upload/'));
+ 		redirect(base_url('/upload/showIdForm'));
 ?>
