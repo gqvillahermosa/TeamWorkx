@@ -1,0 +1,2 @@
+<p>Dekiti Tirsia Siradas is an old school Filipino martial art of the Tortal clan from the island of Negros in the West Visayas region of the Philippines. This martial art is very combative with its emphasis on bladed weapons like bolos and knives. It also work with impact weapons like sticks, as well as empty hand vs weapon and firearms. The art has long been with the Tortals as stretching back to 1851 with Norberto Toral and has been effective and many conflicts including guerilla fights in  World War II.
+</p>

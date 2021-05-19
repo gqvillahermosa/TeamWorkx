@@ -38,8 +38,8 @@
 			</fieldset>
 			</form>
 			<center>
-				<small class="form-text text-muted">5 of 7 Steps to Go</small>
-				<progress value="5" max="7" class="mb-3"></progress>
+				<small class="form-text text-muted">5 of 8 Steps</small>
+				<progress value="5" max="8" class="mb-3"></progress>
 			</center>
 		</div>
 

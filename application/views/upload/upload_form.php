@@ -36,8 +36,8 @@
 				<input type="submit" value="Upload" class="btn btn-primary btn-block mb-3" />
 			</fieldset>
 			<center>
-				<small class="form-text text-muted">3 of 7 Steps</small>
-				<progress value="3" max="7"></progress>
+				<small class="form-text text-muted">3 of 8 Steps</small>
+				<progress value="3" max="8"></progress>
 				</center>
 			</form>
 		</div>	
