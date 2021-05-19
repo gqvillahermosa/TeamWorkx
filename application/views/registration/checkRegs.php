@@ -46,8 +46,8 @@
 		</div>
 	</section>
 	<center>
-			<small class="form-text text-muted">1 of 7 Steps</small>
-			<progress value="1" max="7"></progress>
+			<small class="form-text text-muted">1 of 8 Steps</small>
+			<progress value="1" max="8"></progress>
 </center>
 </fieldset>
 </form>

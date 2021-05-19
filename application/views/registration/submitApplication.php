@@ -31,7 +31,3 @@
 
 	?>
 </div>
-<center>
-			<small class="form-text text-muted">7 of 7 Steps</small>
-			<progress value="7" max="7"></progress>
-</center>
