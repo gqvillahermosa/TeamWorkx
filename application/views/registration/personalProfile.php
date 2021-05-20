@@ -150,7 +150,7 @@
 		<div class="form-group">
 					<p>
 					<label for="Organization"> Organization </label>
-					<input type="text" name="Organization" id="Organization" class="form-control" placeholder="abcde">
+					<input type="text" name="organization" id="Organization" class="form-control" placeholder="abcde">
 					<small class="form-text text-muted">Please enter the name of your organizaton</small>
 					</p>
 		</div>
@@ -159,7 +159,7 @@
 		<div class="form-group">
 					<p>
 					<label for="Position"> Position </label>
-					<input type="text" name="Position" id="Position" class="form-control" placeholder="abcde">
+					<input type="text" name="position" id="Position" class="form-control" placeholder="abcde">
 					<small class="form-text text-muted">Please enter the your positon in your organization</small>
 					</p>
 		</div>
@@ -190,7 +190,7 @@
 		<div class="form-group">
 					<p>
 					<label for="Office_fax"> Office_fax </label>
-					<input type="text" name="Office_fax" id="Office_fax" class="form-control" placeholder="abcde">
+					<input type="text" name="office_fax" id="Office_fax" class="form-control" placeholder="abcde">
 					<small class="form-text text-muted">Enter instructions here</small>
 					</p>
 		</div>
@@ -221,7 +221,7 @@
 <div class="form-group">
 					<p>
 					<label for="Home_fax"> Home_fax </label>
-					<input type="text" name="Home_fax" id="Home_fax" class="form-control" placeholder="abcde">
+					<input type="text" name="home_fax" id="Home_fax" class="form-control" placeholder="abcde">
 					<small class="form-text text-muted">Please enter the your Home fax</small>
 					</p>
 				</div>
@@ -278,7 +278,7 @@
 	<div class="form-group">
 					<p>
 					<label for="Degree"> Degree </label>
-					<input type="text" name="Degree" id="Degree" class="form-control" placeholder="abcde">
+					<input type="text" name="degree" id="Degree" class="form-control" placeholder="abcde">
 					<small class="form-text text-muted">Please enter your highest degree earned</small>
 					</p>
 				</div>
@@ -287,7 +287,7 @@
 	<div class="form-group">
 					<p>
 					<label for="Specialization:"> Specialization: </label>
-					<input type="text" name="Specialization:" id="Specialization:" class="form-control" placeholder="abcde">
+					<input type="text" name="specialization" id="Specialization:" class="form-control" placeholder="abcde">
 					<small class="form-text text-muted">Please enter here your specialization</small>
 					</p>
 				</div>
@@ -300,7 +300,7 @@
 <div class="form-group">
 					<p>
 					<label for="University"> Educational Institution </label>
-					<input type="text" name="University" id="University" class="form-control" placeholder="abcde">
+					<input type="text" name="university" id="University" class="form-control" placeholder="abcde">
 					<small class="form-text text-muted">Please enter the name of school/college/unversity where your earned your degree</small>
 					</p>
 				</div>
@@ -309,7 +309,7 @@
 <div class="form-group">
 					<p>
 					<label for="Year_graduated"> Year_graduated </label>
-					<input type="date" name="Year_graduated" id="Year_graduated" class="form-control">
+					<input type="date" name="year_graduated" id="Year_graduated" class="form-control">
 					<small class="form-text text-muted">Please the graduaton date of your degree</small>
 					</p>
 </div>

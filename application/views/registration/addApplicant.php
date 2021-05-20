@@ -36,6 +36,9 @@ $data = array( //get data from form nput
 
 
      );//$data
+
+
+      print_r($data);
  		//$applicant = array('' => '' );
 		foreach ($data as $key => $value) {
  			$applicant[$key] =   $this->security->xss_clean($value);//clean each one
@@ -43,6 +46,6 @@ $data = array( //get data from form nput
  			# code...
  		}
 
- 		$this->applicants->add($applicant);
- 		redirect(base_url('/upload/showIdForm'));
+ 	$this->applicants->add($applicant);
+ 	//	redirect(base_url('/upload/showIdForm'));
 ?>

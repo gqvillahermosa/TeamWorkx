@@ -19,11 +19,17 @@ class Applicants extends CI_Model{
 
 
 
-        public function updatePhoto($id, $photo){
+        public function updatePIC($id, $photo){
             $this->db->set('PIC_Photo', $photo);
             $this->db->where('ID', $id);
             $this->db->update('applicants');
-        }//addPhoto
+        }//addPIC
+
+        public function updateProof($id, $photo){
+            $this->db->set('proof_of_payment', $photo);
+            $this->db->where('ID', $id);
+            $this->db->update('applicants');
+        }//addProof
 
         public function search($name)
         {

@@ -111,21 +111,24 @@ public function do_upload($mode) //'id' for id photo, pic for PIC photo for uplo
                 {
                         $data = array('upload_data' => $this->upload->data());
                         //print_r($data);
-                        $this->applicants->updateID($this->session->pic_id, $this->upload->data('file_name')  );
+                      
 
                         $this->load->view('template/header');
                         
                         switch ($mode) {
                                 case 'id':
                                         # code...
+                                    $this->applicants->updateID($this->session->pic_id, $this->upload->data('file_name')  ); // update ID photo
                                        $this->load->view('upload/upload_success', $data);
                                         break;
                                  case 'pic':
                                         # code...
+                                     $this->applicants->updatePIC($this->session->pic_id, $this->upload->data('file_name')  ); // update PIC photo
                                      $this->load->view('uploadpic/upload_success', $data);
                                         break;
                                 case 'proof':
                                         # code...
+                                     $this->applicants->updateProof($this->session->pic_id, $this->upload->data('file_name')  ); // update ID photo
                                       $this->load->view('uploadproof/upload_success', $data);
                                         break;
                                 default:

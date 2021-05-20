@@ -81,7 +81,12 @@ public function check(){ // check if the applicants's id is not yet registered
 	public function sponsor($id){
 		/* get the fullname of the sponsor by id */
 		$sponsor = $this->members->search_single($id)->row_array();
-		return $sponsor['Firstname'].' '.$sponsor['Surname'];
+		if($sponsor){
+			return $sponsor['Firstname'].' '.$sponsor['Surname'];
+			}//if
+		else {
+			redirect(base_url('wtf/index/1'));
+		}	
 	}
 
  	public function personalProfile(){ // input the applicant's personal profile
@@ -111,20 +116,12 @@ public function check(){ // check if the applicants's id is not yet registered
 		 }else{
 		 	    $this->load->view('registration/addApplicant');
 
-		 }
+		 }//else
  		
  	}
-
- 	public function addApplicant(){
- 		/*remimplement add applicant to form.
-			1. Gather all inputs form form
-			2. Collect all inputs in an array
-			3. Send array to database
- 		*/
  		
  		
- 		
- 	}//addApplicant
+ 	
 
  	public function submitApplication(){
 
