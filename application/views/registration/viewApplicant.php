@@ -74,22 +74,23 @@ $profile = $this->applicants->getSingle($id);
 
 			</p>	
 		</div>
-
+</div>	
+<hr>
 	<center>
 	<div class="col-sm">	
 		<div class=”card”>
 			<img class=”card-img-top” 
 				src= <?=base_url('id_photo/'.$profile->Photo) ?> 
 				alt=”Card image cap”
-				height="720"
-				width="1080"
+				height="480"
+				width="720"
 				> <!--Adjust image size -->
 		<div class=”card-body”>ID Photo</div>
 		</div>
 	</div>
 	</center>
-</div>	
 
+<br>
 <h5>Addresses</h5>
 <hr>
 
@@ -106,7 +107,17 @@ $profile = $this->applicants->getSingle($id);
 								{
 							echo "n/a";
 						} 
-					?>
+					?><br>
+		 <img src=<?=base_url("icons/printer-fill.svg"); ?>> 			
+		 <?php 
+						if($profile->Office_fax){// if no number, value is null
+							echo '<a href=tel://'.$profile->Office_fax.'>'.$profile->Office_fax.'</a>'; 
+							} 
+							else
+								{
+							echo "n/a";
+						} 
+					?>			
 	</div>
 
 
@@ -122,7 +133,17 @@ $profile = $this->applicants->getSingle($id);
 								{
 							echo 'n/a';
 						} 
-					?>
+					?><br>
+		 <img src=<?=base_url("icons/printer.svg"); ?>> 			
+		 <?php 
+						if($profile->Home_fax){// if no number, value is null
+							echo '<a href=tel://'.$profile->Home_fax.'>'.$profile->Home_fax.'</a>'; 
+							} 
+							else
+								{
+							echo "n/a";
+						} 
+					?>					
 	</div>
 </div>
 <h5>Contact Information</h5>
@@ -199,6 +220,39 @@ $profile = $this->applicants->getSingle($id);
 	</div>
 
 
+<h5>Highest Educational Attainment </h5>
+<hr>
+<div class="row mb-3">
+	<div class="col-sm">
+		Degree: <strong><?=$profile->Degree ?></strong>
+	</div>
+	<div class="col-sm">
+		 	Specialization :	 <strong><?=$profile->Specialization ?></strong>
+	</div>
+	<div class="col-sm">
+		 	College/University : <strong><?=$profile->University ?></strong>	
+	</div>
+	<div class="col-sm">
+		 	Year Graduated :	<strong><?=$profile->Year_graduated  ?></strong>	
+	</div>
+
+	
+</div>
+
+<h5>Work Experience </h5>
+<hr>
+<div class="row mb-3">
+	<div class="col-sm">
+		 	Organization :	 <strong><?=$profile->Organization ?></strong>
+	</div>
+	<div class="col-sm">
+		 	Position :	 <strong><?=$profile->Position ?></strong>
+	</div>
+</div>
+
+
+
+
 
 <h5>Registration Information</h5>
 <hr>
@@ -215,13 +269,29 @@ $profile = $this->applicants->getSingle($id);
 	</div>
 	<center>
 	<div class=”card”>
+	
 			<img class=”card-img-top” 
 			src= <?=base_url('pic_photo/'.$profile->PIC_photo) ?> 
 			alt=”Card image cap”
-			height="720"
-			width="1080"
+			height="480"
+			width="720"
 			><!--Adjust image size -->
-		<div class=”card-body”>Professional ID</div>
+	
+		<div class=”card-body”>Professional Identification Card</div>
+		</div>
+	</center>
+
+	<center>
+	<div class=”card”>
+	
+			<img class=”card-img-top” 
+			src= <?=base_url('proof_photo/'.$profile->proof_of_payment) ?> 
+			alt=”Card image cap”
+			height="480"
+			width="720"
+			><!--Adjust image size -->
+	
+		<div class=”card-body”>Proof of Payment</div>
 		</div>
 	</center>
 
