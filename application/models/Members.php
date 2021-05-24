@@ -53,6 +53,29 @@ class Members extends CI_Model{
 
         }//getFullname
 
+        public function validateUser($id, $password){
+                /*get the USER ID and Password
+                check if the user's password if the match the hash password in the database
+                if match return TRUE else return FALSE
+                */
+                /*echo "inside validateUser";
+                echo $id.' '.$password;
+                echo "<br>";*/
+
+                $this->db->where('ID', $id);
+                $this->db->select('password');
+                $query = $this->db->get('members');
+
+               $hash_password = $query->row()->password;
+
+                if (password_verify($password, $hash_password)){
+                       return TRUE;
+                }else{
+                       return FALSE;
+                }
+
+        }
+
 }//class Member
 
 ?>
