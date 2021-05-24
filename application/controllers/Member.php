@@ -12,29 +12,52 @@ class Member extends CI_Controller {
                // $this->load->library('table');
                // $this->load->library('form_validation');
                 $this->load->helper('form');
+                $this->load->helper('html');
                 
         }//construct
 
 
         public function index(){ // login page
-            if($this->session->userdata('admin')== FALSE){redirect(base_url('/administrator/login'));}
+            if($this->session->userdata('login')== FALSE)
+                {redirect(base_url('/member/login'));}
+            // check is the user is already login
         	$this->load->view('template/header');
             $this->load->view('template/menu');
             $this->load->view('member/dashboard');
             $this->load->view('template/footer');
         }//index
 
-        public function addForm(){
-        	$this->load->view('template/header');
-        	$this->load->view('template/menu');
-        	$this->load->view('member/addForm');
-        	$this->load->view('template/footer');
+       public function login(){
+            /* load the login form*/
+            //echo "inside login";
+            $this->load->view('template/header');
+            $this->load->view('member/login');
+            echo "</body></html>";
+       }//login
 
-        }//addMemberForm
 
-        public function addMember(){
+       public function verify(){
+        /*input by member login form post */
+        $ID = $this->input->post("username"); 
+        $password = $this->input->post("password");
+        // echo $ID.' '.$password;
+       if($this->members->validateUser($ID,$password)){
+            //true
+            $user = array('login' => TRUE, //set session variables
+                            'ID' => $ID);
+           $this->session->set_userdata($user);
+           redirect(base_url('member/index'));
+       }else{
+            //false
+            redirect(base_url('member/login'));
+        }
 
-        }//addMember
+       }//verifly
+
+       public function logout(){
+            $this->session->sess_destroy();
+           redirect(base_url('member/login'));
+       }
 
         public function viewMember($id){
 
