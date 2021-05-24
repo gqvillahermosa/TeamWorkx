@@ -76,6 +76,28 @@ class Members extends CI_Model{
 
         }
 
+        public function changePassword($id, $password){
+            /* change the password of $id with $password
+                get the hash of $password
+                update password of member with the hash identified with $id.
+            */
+
+            echo "inside changePassword";
+            echo '$id:'.$id."<br>";
+            echo '$password:'.$password."<br>";
+
+            $hash_password = password_hash($password, PASSWORD_BCRYPT );
+            echo 'hash:'.$hash_password.'<br>';
+
+            $data = array('password' => $hash_password,
+                            'change_password' => FALSE);
+
+            $this->db->where('ID', $id);
+            $this->db->update('members', $data);
+
+
+        }//changePassword
+
 }//class Member
 
 ?>

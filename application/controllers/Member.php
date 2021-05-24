@@ -59,6 +59,52 @@ class Member extends CI_Controller {
            redirect(base_url('member/login'));
        }
 
+       public function showPasswordForm(){
+        $this->load->view('template/header');
+        $this->load->view('member/changePassword');
+        $this->load->view('template/footer');
+       }
+
+       public function changePassword(){
+        /* 
+        The function will update the password of the member
+        identified by ID. The change password will gather the infor and 
+        update the table member.
+       
+
+        $ID = $this->input->post('id');
+        $password = $this->input('password');
+
+         */
+
+        //echo "inside Change Password";
+
+       // $id = $this->input->post('ID');
+        $password = $this->input->post('password');
+        $passconf = $this->input->post('passconf');
+
+       if($password === $passconf){
+        
+        $id = $this->session->userdata('ID');
+
+        $this->members->changePassword($id, $password);
+
+        echo "change password successfull!";
+
+         //$this->members->changePassword()
+       
+       }else{//password dont match
+
+         $this->load->view('template/header');
+           echo "<div class='container'><div class='alert alert-danger' role='alert'> Passwords do not match!</div></div>";
+        $this->load->view('member/changePassword');
+        $this->load->view('template/footer'); 
+       }
+
+       
+
+       }
+
         public function viewMember($id){
 
             echo "inside viewMember $id";
