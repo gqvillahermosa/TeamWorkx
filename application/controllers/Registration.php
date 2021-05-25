@@ -91,21 +91,42 @@ public function check(){ // check if the applicants's id is not yet registered
 
  	public function personalProfile(){ // input the applicant's personal profile
 
+ 		//form validation
  		 $this->form_validation->set_error_delimiters("<div class='alert alert-danger'>","</alert></div>");
  		 $this->form_validation->set_rules('firstname', 'Firstname', 'required|alpha_numeric_spaces');
  		 $this->form_validation->set_rules('middlename', 'Firstname', 'alpha');
  		 $this->form_validation->set_rules('surname', 'Surname', 'required|alpha_numeric_spaces');
  		 $this->form_validation->set_rules('birthdate', 'Birthdate', 'required');
- 		 $this->form_validation->set_rules('office', 'Office Address', 'alpha_numeric_spaces');
+ 		 $this->form_validation->set_rules('office', 'Office Address', 'required|');
  		 $this->form_validation->set_rules('home', 'Home Address', 'alpha_numeric_spaces');
  		 $this->form_validation->set_rules('office_landline', 'Office Landline Phone number', 'integer');
  		 $this->form_validation->set_rules('home_landline', 'Home Landline Phone number', 'integer');
- 		 $this->form_validation->set_rules('mobile', 'Cell / Mobile Phone number', 'integer');
+ 		 $this->form_validation->set_rules('mobile', 'Cell / Mobile Phone number', 'required|integer');
  		 $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
  		 $this->form_validation->set_rules('webite', 'Website', 'valid_url');
  		 $this->form_validation->set_rules('socialmedia1', 'Social Media 1', 'valid_url');
  		 $this->form_validation->set_rules('socialmedia2', 'Social Media 2', 'valid_url');
  		 $this->form_validation->set_rules('chapter', 'Chapter', 'required');
+
+ 		 //fax
+ 		 $this->form_validation->set_rules('Office Fax', 'Office Fax number', 'integer');
+ 		 $this->form_validation->set_rules('home_fax', 'Home Fax number', 'integer');
+
+ 		 //professional info
+ 		  $this->form_validation->set_rules('degree', 'Degree', 'required|alpha_numeric_spaces');
+ 		  $this->form_validation->set_rules('specialization', 'Specialization', 'required|alpha_numeric_spaces');
+ 		  $this->form_validation->set_rules('university', 'Educational Institution', 'required|alpha_numeric_spaces');
+ 		  $this->form_validation->set_rules('year_graduated', 'Year Graduated', 'required');
+ 		  $this->form_validation->set_rules('organization', 'Organization', 'required|alpha_numeric_spaces');
+ 		  $this->form_validation->set_rules('position', 'Position', 'required|alpha_numeric_spaces 	');
+
+ 		  //pic info
+ 		  $this->form_validation->set_rules('registration_no', 'Registration No.', 'required');
+ 		  $this->form_validation->set_rules('registration_date', 'Registration Date', 'required');
+ 		  $this->form_validation->set_rules('valid_until', 'Valid Until', 'required');
+ 		
+
+
 
 
 
