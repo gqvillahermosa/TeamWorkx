@@ -186,8 +186,12 @@ public function check(){ // check if the applicants's id is not yet registered
 							WHERE`SeqNo` = $id;
 						");
 		$this->db->query(
-						"INSERT INTO members (`ID`,`Firstname`,`Middlename`,`Surname`,`Salutation`, `Birthdate`,`Gender`,`Civil_Status`,`Photo`, `Office`,`Home`,`Office_landline`,`Home_landline`,`Mobile`,`Email`, `Website`, `Socialmedia1`, `Socialmedia2`,`Status`,`change_password`)
-						SELECT `ID`,`Firstname`,`Middlename`,`Surname`,`Salutation`, `Birthdate`,`Gender`,`Civil_Status`,`Photo`, `Office`,`Home`,`Office_landline`,`Home_landline`,`Mobile`,`Email`, `Website`, `Socialmedia1`, `Socialmedia2`,'new',TRUE
+						"INSERT INTO members 
+						(
+						`ID`,`Firstname`,`Middlename`,`Surname`,`Salutation`, `Birthdate`,`Gender`,`Civil_Status`,`Photo`, `Office`,`Home`,`Office_landline`,`Home_landline`,`Mobile`,`Email`, `Website`, `Socialmedia1`, `Socialmedia2`,`Status`,`change_password`,`Degree`,`Specialization`,`University`,`Year_graduated`,`Organization`,`Position`,`Office_fax`,`Home_fax`,`Remarks`)
+
+						SELECT `ID`,`Firstname`,`Middlename`,`Surname`,`Salutation`, `Birthdate`,`Gender`,`Civil_Status`,`Photo`, `Office`,`Home`,`Office_landline`,`Home_landline`,`Mobile`,`Email`, `Website`, `Socialmedia1`, `Socialmedia2`,'new',TRUE, `Degree`,`Specialization`,`University`,`Year_graduated`,`Organization`,`Position`,`Office_fax`,`Home_fax`,`Remarks`
+
 						FROM `applicants` 
 						WHERE SeqNo = $id ");
 
