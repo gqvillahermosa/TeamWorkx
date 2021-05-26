@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	public function validateUser( $id)
 	{
 
-		$query = $this->db->query("CALL getHashPassword($id)");
+		$query = $this->db->query("SELECT * FROM  admininfo");
 		$hash = $query->row()->password;//get hash password
 		$password = $this->input->post("password");
 		//echo $hash;

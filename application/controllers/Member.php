@@ -13,6 +13,7 @@ class Member extends CI_Controller {
                // $this->load->library('form_validation');
                 $this->load->helper('form');
                 $this->load->helper('html');
+                $this->load->helper('security');
                 
         }//construct
 
@@ -22,7 +23,7 @@ class Member extends CI_Controller {
                 {redirect(base_url('/member/login'));}
             // check is the user is already login
         	$this->load->view('template/header');
-            $this->load->view('template/menu');
+           // $this->load->view('template/menu');
             $this->load->view('member/dashboard');
             $this->load->view('template/footer');
         }//index
@@ -38,13 +39,17 @@ class Member extends CI_Controller {
 
        public function verify(){
         /*input by member login form post */
-        $ID = $this->input->post("username"); 
-        $password = $this->input->post("password");
+        $ID = $this->security->xss_clean($this->input->post("username")); 
+        $password = $this->security->xss_clean($this->input->post("password"));
+
         // echo $ID.' '.$password;
        if($this->members->validateUser($ID,$password)){
             //true
+            $name = $this->members->getFullname($ID);
             $user = array('login' => TRUE, //set session variables
-                            'ID' => $ID);
+                           'ID' => $ID,
+                           'name' => $name 
+                            );
            $this->session->set_userdata($user);
            redirect(base_url('member/index'));
        }else{

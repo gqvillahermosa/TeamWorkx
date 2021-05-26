@@ -22,32 +22,27 @@ class Administrator extends CI_Controller {
         public function index(){ // login page
             if($this->session->userdata('admin')== FALSE){
                 redirect(base_url('/administrator/login'));
-            }
-        	// $this->session->set_flashdata('chapter', ' ');//set chapter flashdata to ready
-           // echo "inside administrator index";
-            $this->load->view('template/header');
-            $this->load->view('admin/dashboard');
+            }else{
+                $this->load->view('template/header');
+                $this->load->view('admin/dashboard');
+            }//else   
         }//index
 
         public function login(){
-        if($this->session->userdata('admin')){
-            //echo "you are already login";
-            $this->showDashboard();
-        }else{
             $this->load->view("template/header");
             $this->load->view("admin/login");
-           ///  $this->load->view("login/login");
-            echo "</body></html>";
-            //$this->load->view("template/footer");
-        }
-    }//login
+            $this->load->view("template/footer");
+        
+        }//login
 
-    function verify(){
+        public  function verify(){
         $id = $this->input->post("username");
+        $password = $this->input->post("password");
+
         $check = $this->admin->validateUser( $id);
         if ($check) {
             //echo "user verified";
-            //$username = $this->members->getFullname($id);
+            $username = $this->members->getFullname($id);
             $this->session->set_userdata('fullname', $username);
             $this->session->set_userdata('admin', '1');
             $this->session->set_userdata('user', $id);

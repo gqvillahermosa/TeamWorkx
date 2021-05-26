@@ -77,7 +77,7 @@
 <small class="form-text text-muted">Please your valid PIC as Username</small>
 <br>
 <label>Password</label>
-<input type="password" name="password" class="form-control" value="">
+<input type="password" name="password" class="form-control" >
 <small class="form-text text-muted">Enter your password here</small>
 <br>
 <div class="form-group">

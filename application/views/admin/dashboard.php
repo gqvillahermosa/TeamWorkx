@@ -59,7 +59,7 @@
        <div class="text-white">
         <?php 
       
-          echo 'Login as '.$this->session->userdata('user').'&nbsp'; 
+          echo 'Welcome '.$this->session->userdata('fullname').'&nbsp'; 
         ?>
           
         </div> 

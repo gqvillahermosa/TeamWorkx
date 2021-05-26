@@ -36,13 +36,10 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-         <a class="nav-link" target="mainview" href=<?=base_url('chapter_officer/member') ?> >Members</a>
+         <a class="nav-link" target="mainview" href=<?=base_url('#') ?> >Task</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" target="mainview" tabindex="-1" href=<?=base_url('chapter_officer/news') ?> >News</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" target="mainview" tabindex="-1" target="mainview" href=<?=base_url('chapter_officer/fees') ?>>Fees</a>
+        <a class="nav-link" target="mainview" tabindex="-1" href=<?=base_url('#') ?> >Setting</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" target="mainview"  tabindex="-1" href=<?=base_url('chapter_officer/help') ?> >Help</a>
@@ -56,8 +53,8 @@
       $link = base_url('settings');
       echo anchor($link,$icon);
   ?> -->
-       <div class="text-white"><?php echo 'Login as '.($this->session->userdata('fullname')).'&nbsp'; ?></div> 
-       <?=anchor(base_url('chapter_officer/logout'), 'Logout', 'class="btn btn-outline-warning my-2 my-sm-0 ml-1"') ?>
+       <div class="text-white"><?php echo 'Welcome '.($this->session->userdata('name')).'&nbsp'; ?></div> 
+       <?=anchor(base_url('member/logout'), 'Logout', 'class="btn btn-outline-warning my-2 my-sm-0 ml-1"') ?>
       <!-- <button class="btn btn-outline-warning my-2 my-sm-0 ml-1" >Logout</button> -->
     
   </div>
