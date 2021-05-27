@@ -16,7 +16,8 @@ class Chapter_officer extends CI_Controller
         $this->load->model('admin');
         $this->load->model('members');
         $this->load->model('bigbro');
-         $this->load->model('applicants');
+        $this->load->model('applicants');
+       // $this->load->model('adminofficer');
 		# code...
 		$this->load->helper('html');
 		$this->load->library('session');
@@ -151,6 +152,32 @@ class Chapter_officer extends CI_Controller
 		print_r($formElements);
 
 	}//descTab
+
+	public function getMemberbyChapters($chapter){
+		/* dynamically create a drop downlist of candidate administrator
+		from the HQ members. 
+		*/
+		//echo "getMemberbyChapters $chapter";
+
+		$ID = array();
+		$name = array();
+
+		$query = $this->members->getMemberbyChapters($chapter);
+		
+		foreach ($query->result_array() as $row)
+		{
+        	array_push($ID, $row['ID'] );
+        	array_push($name, $row['Firstname']." ".$row['Surname'] );
+       
+		}
+
+		$member = array_combine($ID, $name);
+
+		echo form_dropdown('members', $member);
+		//print_r($member);
+		
+
+	}//chooseAdmin
 	
 }//Chapter_officer
 

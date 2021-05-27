@@ -98,6 +98,17 @@ class Members extends CI_Model{
 
         }//changePassword
 
+
+        public function getMemberbyChapters($chapter){
+            //return querry of members from a specific chapter
+
+            $this->db->where('chapter', $chapter);
+           // $this->db->select('ID','Firstname','Surname');
+            $query = $this->db->get('members');
+
+            return  $query;
+        }
+
 }//class Member
 
 ?>
