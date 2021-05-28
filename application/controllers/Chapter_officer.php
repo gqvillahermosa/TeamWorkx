@@ -159,11 +159,25 @@ class Chapter_officer extends CI_Controller
 		*/
 		//echo "getMemberbyChapters $chapter";
 
-		$ID = array();
-		$name = array();
-
 		$query = $this->members->getMemberbyChapters($chapter);
 		
+		$data = $this->query2Array($query);
+
+		//print_r($data);
+		//echo "<br>";
+
+		$this->load->view('component/dropdown', $data);
+		
+		//print_r($member);
+		
+
+	}//chooseAdmin
+
+	public function query2Array($query){
+		$ID = array();
+		$name = array();
+		$data = array();
+		$members = array();
 		foreach ($query->result_array() as $row)
 		{
         	array_push($ID, $row['ID'] );
@@ -173,11 +187,15 @@ class Chapter_officer extends CI_Controller
 
 		$member = array_combine($ID, $name);
 
-		echo form_dropdown('members', $member);
 		//print_r($member);
-		
+		//echo "<br>";
 
-	}//chooseAdmin
+		//array_push($data, $member);
+		
+		$data = array('data' => $member);
+		return $data;
+
+	}
 	
 }//Chapter_officer
 
