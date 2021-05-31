@@ -23,6 +23,7 @@ class Chapter_officer extends CI_Controller
 		$this->load->library('session');
 		$this->load->database();
 		$this->load->library('table');
+		$this->load->library('auxilar');
 	}
 
 	public function index(){ //redirected from Chapter_officer/verifly
@@ -161,7 +162,7 @@ class Chapter_officer extends CI_Controller
 
 		$query = $this->members->getMemberbyChapters($chapter);
 		
-		$data = $this->query2Array($query);
+		$data = $this->auxilar->listNameID($query);
 
 		//print_r($data);
 		//echo "<br>";
@@ -173,30 +174,7 @@ class Chapter_officer extends CI_Controller
 
 	}//chooseAdmin
 
-	public function query2Array($query){
-		$ID = array();
-		$name = array();
-		$data = array();
-		$members = array();
-		foreach ($query->result_array() as $row)
-		{
-        	array_push($ID, $row['ID'] );
-        	array_push($name, $row['Firstname']." ".$row['Surname'] );
-       
-		}
 
-		$member = array_combine($ID, $name);
-
-		//print_r($member);
-		//echo "<br>";
-
-		//array_push($data, $member);
-		
-		$data = array('data' => $member);
-		return $data;
-
-	}
-	
 }//Chapter_officer
 
 ?>
