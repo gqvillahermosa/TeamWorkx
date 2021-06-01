@@ -1,9 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+
+function __construct()
+	{
+		//parent::__construct();
+		$CI =& get_instance();
+        
+	}
 class Auxilar {
 
+		
+
+	
+
+
         public function listNameID($query){
+        	/*
+        	make a list of ID/Names from a query
+        	*/
 		$ID = array();
 		$name = array();
 		$data = array();

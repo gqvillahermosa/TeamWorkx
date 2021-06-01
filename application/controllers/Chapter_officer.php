@@ -167,12 +167,13 @@ class Chapter_officer extends CI_Controller
 		//print_r($data);
 		//echo "<br>";
 
-		$this->load->view('component/dropdown', $data);
+		$this->load->view('template/header');
+		$this->load->view('admin/addAdmin', $data);
 		
 		//print_r($member);
 		
 
-	}//chooseAdmin
+	}//getMemberbyChapters
 
 
 }//Chapter_officer
