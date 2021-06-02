@@ -52,7 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	public function addAdmin($member){
 			$data = array('ID' => $member );
 			$this->db->insert('admins', $data );
-	}//addAdmin
+	}//addAdmin#
+
+	public function removeAdmin($member){
+		$this->db->where('ID', $member);
+		$this->db->delete('admins');
+	}//
 
 	
 }

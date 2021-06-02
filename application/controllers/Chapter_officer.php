@@ -169,7 +169,14 @@ class Chapter_officer extends CI_Controller
 			if (strcmp($task, $action ) == 0){
 				$this->admin->addAdmin($member);
 			}
+
+			$action = 'remove';
+			if (strcmp($task, $action ) == 0){
+				$this->admin->removeAdmin($member);
 			}
+
+
+			}//isset
 
 		//get chapter members
 		$query = $this->members->getMemberbyChapters($chapter);

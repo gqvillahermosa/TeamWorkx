@@ -21,7 +21,14 @@ Total: <?=count($admin['data']);?>
 	<tr>
 	<td><?=$key ?></td>
 	<td><?=$value ?></td>
-	<td> <button class="btn btn-info">View</button> <button class="btn btn-danger">Remove</button> </td>
+	<td>
+	
+	 <?=form_open('chapter_officer/manageAdmin/'.$this->session->userdata('chapter'), 'id="removeAdmin"') ?>
+		<?=form_hidden('task', 'remove'); ?>
+		<?=form_hidden('member', $key); ?>
+	 <button class="btn btn-danger">Remove</button> 
+	
+	</td>
 	</td>
 <?php endforeach; ?>
 </table>
