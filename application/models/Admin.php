@@ -45,7 +45,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}	//validateChapterOfficer
 	//moved showApplicant to  Applicant Model
 
-	
+	public function listAdmin(){
+		return $this->db->query('SELECT `ID`,`Firstname`,`Surname` FROM `admininfo` ');
+	}
+
+	public function addAdmin($member){
+			$data = array('ID' => $member );
+			$this->db->insert('admins', $data );
+	}//addAdmin
 
 	
 }

@@ -154,26 +154,50 @@ class Chapter_officer extends CI_Controller
 
 	}//descTab
 
-	public function getMemberbyChapters($chapter){
-		/* dynamically create a drop downlist of candidate administrator
-		from the HQ members. 
+	public function manageAdmin($chapter){
+		/*
+		Dynamic Form that add and remove chapter administrator 
 		*/
-		//echo "getMemberbyChapters $chapter";
 
+		if(isset($_POST)){
+		
+			$member = $this->input->post('member');
+			$task = $this->input->post('task'); 
+			$action = 'add';
+			
+
+			if (strcmp($task, $action ) == 0){
+				$this->admin->addAdmin($member);
+			}
+			}
+
+		//get chapter members
 		$query = $this->members->getMemberbyChapters($chapter);
+		$chapter_members = $this->auxilar->listNameID($query);
+		//list of admin
+		$data = $this->admin->listAdmin();
+		$admin = $this->auxilar->listNameID($data);
 		
-		$data = $this->auxilar->listNameID($query);
+		/*print_r($chapter_members['data']);
+		echo "<br>";
+		print_r($admin['data']);*/
 
-		//print_r($data);
-		//echo "<br>";
+		//create array of candidate admin by removing the current admin from chapter members
+		$candidate_admin = array( 
+								'data' => array_diff($chapter_members['data'], $admin['data']), 
+								"chapter" => $chapter);
 
+		$admin = array("admin" => $admin,
+						"chapter" => $chapter
+						);
+ 
 		$this->load->view('template/header');
-		$this->load->view('admin/addAdmin', $data);
-		
-		//print_r($member);
-		
-
-	}//getMemberbyChapters
+	    $this->load->view('admin/addAdmin', $candidate_admin);
+		$this->load->view('admin/listAdmin', $admin);
+		$this->load->view('template/footer');
+	
+		//print_r($member);		
+	}//
 
 
 }//Chapter_officer

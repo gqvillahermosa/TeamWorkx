@@ -46,6 +46,7 @@ class Administrator extends CI_Controller {
             $this->session->set_userdata('fullname', $username);
             $this->session->set_userdata('admin', '1');
             $this->session->set_userdata('user', $id);
+            $this->session->set_userdata('chapter', 'HQ');
             redirect(base_url('administrator'));
         }else{
             //echo "user not verified";

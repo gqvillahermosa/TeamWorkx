@@ -36,7 +36,7 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-         <a class="nav-link" target="mainview" href=<?=base_url('administrator/members') ?> >Members</a>
+         <a class="nav-link" target="mainview" href=<?=base_url('chapter_officer/manageAdmin/'.$this->session->userdata('chapter')) ?> >Members</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" target="mainview" tabindex="-1" href=<?=base_url('#') ?> >News</a>
